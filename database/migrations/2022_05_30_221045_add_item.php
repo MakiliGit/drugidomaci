@@ -14,7 +14,7 @@ class AddItem extends Migration
     public function up()
     {
         Schema::table('ingredients', function (Blueprint $table) {
-            $table->foreignId('item_id');
+            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
         });
     }
 
