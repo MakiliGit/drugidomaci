@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIngredientsTable extends Migration
+class AddItem extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateIngredientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ingredients', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('name');
-            $table->boolean('meet');
+        Schema::table('ingredients', function (Blueprint $table) {
+            $table->foreignId('item_id');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateIngredientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ingredients');
+        Schema::table('ingredients', function (Blueprint $table) {
+            $table->removeColumn('item_id');
+        });
     }
 }

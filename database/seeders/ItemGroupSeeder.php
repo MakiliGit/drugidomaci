@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ItemGroup;
 use Illuminate\Database\Seeder;
 
 class ItemGroupSeeder extends Seeder
@@ -13,6 +14,6 @@ class ItemGroupSeeder extends Seeder
      */
     public function run()
     {
-        //
+        ItemGroup::factory(7)->create();
     }
 }

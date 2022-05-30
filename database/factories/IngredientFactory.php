@@ -14,7 +14,9 @@ class IngredientFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word,
+            'meet' => $this->faker->boolean,
+            'item_id' => $this->faker->numberBetween(1, 20)
         ];
     }
 }
