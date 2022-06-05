@@ -17,7 +17,7 @@ class CreateIngredientsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->boolean('meet');
+            $table->boolean('meat');
         });
     }
 

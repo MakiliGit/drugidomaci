@@ -15,7 +15,7 @@ class IngredientFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            'meet' => $this->faker->boolean,
+            'meat' => $this->faker->boolean,
             'item_id' => $this->faker->numberBetween(1, 20)
         ];
     }

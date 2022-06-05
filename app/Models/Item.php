@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'price', 'meet', 'item_group_id'];
+    protected $fillable = ['name', 'price', 'meat', 'item_group_id'];
     protected $with = ['ingredients'];
     public function ingredients()
     {

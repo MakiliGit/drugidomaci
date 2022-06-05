@@ -16,7 +16,7 @@ class ItemFactory extends Factory
         return [
             'name' => $this->faker->word,
             'price' => $this->faker->randomFloat(2, 100, 2400),
-            'meet' => $this->faker->boolean(85),
+            'meat' => $this->faker->boolean(85),
             'item_group_id' => $this->faker->numberBetween(1, 7)
         ];
     }

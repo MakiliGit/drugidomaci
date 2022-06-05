@@ -29,18 +29,19 @@ class ItemController extends Controller
         $item = Item::create([
             'name' => $request->name,
             'price' => $request->price,
-            'item_group_id' => $request->item_group_id
+            'item_group_id' => $request->item_group_id,
+            'meat' => false
         ]);
         $m = false;
         foreach ($request->ingredients as $ingredient) {
-            $m = $m || $ingredient['meet'];
+            $m = $m || $ingredient['meat'];
             Ingredient::create([
                 "item_id" => $item['id'],
                 "name" => $ingredient['name'],
-                "meet" => $ingredient["meet"]
+                "meat" => $ingredient["meat"]
             ]);
         }
-        $item->update(["meet" => $m]);
+        $item->update(["meat" => $m]);
         return response()->json($item);
     }
 

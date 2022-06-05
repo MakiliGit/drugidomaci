@@ -24,7 +24,7 @@ class UserController extends Controller
         $user = User::where("email", $req->email)->first();
         if ($user) {
             return response()->json([
-                "error" => "User with given email already exist"
+                "error" => "User with given email already exists"
             ], 400);
         }
         try {
